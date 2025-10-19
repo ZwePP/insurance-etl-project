@@ -9,14 +9,12 @@ This project implements a complete **Extract, Transform, Load (ETL)** working fl
 - **SQLAlchemy** : For creating a robust connection to the PostgreSQL database.
 - **POstgreSQL** : The destionation database for the final, processed data.
 
-The pipe line is architected into five modular scripits
+## ⚙️Pipeline Architecture
+> **run_pipeline.py** [Orchestrator] Main entry point that executes the ETL steps sequentially
+> **scripts/extract.py** [Extract] Reads raw **insurance.csv** data into a DataFrame
+> **scripts/clean.py** [Transform] Remove duplicates and missing values. Implement IQR-based outlier removal on the charges column
+> **scripts/feature_engineering.py** [Transform] Converts categorical data using **One-Hot Encoding**. Creates **interaction features** (e.g., bmi_smoker). **Standard Scales** all numerical features.
+> **scripts/load.py** [Load] Connects to PostgreSQL and loads the final DataFrame into the **insurance_features_scaled** table.
 
-- Extraction: Reads the intial data from CSV source.
 
-- Cleaning: Employs **IQR-based outlier detection** on the **charges** columns and handles duplicates/missing values.
-
-- Feature Engineering: Creates model-ready features. Using **one-hot encoding** for categorical variables and generating critical interaction terms (the product of age and BMI).
-
-- Scaling
-- Loading
 
