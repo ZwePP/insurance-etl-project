@@ -26,16 +26,29 @@ This project implements a complete **Extract, Transform, Load (ETL)** working fl
 1. Python 3 installed
 2. A running instance of PostgreSQL
 3. The input csv file (insurnace.csv) placed in a designed **data/directory**.
- > #Clone the repository 
- > git clone https://github.com/ZwePP/insurance-etl-project.git
- >
- > #Install dependencies
- > pip install pandas scikit-learn sqlalchemy psycopg2-binary jupyer
- >#**Configuration**: Update database credentials in scripts/load.py
- > #engine = create_engine("postgresql://postgres:YOUR_PASSWORD@localhost:5432/postgres")
- >
- >
+```
+ # Clone the repository 
+ # git clone https://github.com/ZwePP/insurance-etl-project.git 
 
+```
+Install dependencies
+```
+ pip install pandas scikit-learn sqlalchemy psycopg2-binary jupyer
+ # **Configuration**: Update database credentials in scripts/load.py
+ # engine = create_engine("postgresql://postgres:YOUR_PASSWORD@localhost:5432/postgres")
+ 
+ ```
+ETL Execution
+
+```
+python run_pipeline.py
+
+```
+ML Modeling
+```
+jupyter notebook ml_layer.ipynb
+
+```
 
 
 
